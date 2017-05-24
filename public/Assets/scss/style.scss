@@ -1,0 +1,154 @@
+$desired-width: 100%; // you can have 600px or 100% of something.
+$your-images-width: 1440;
+$your-images-heigh: 600;
+
+$bg: #419873;
+
+body{
+  background:$bg;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .slide {
+    width:100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.container{
+  width: $desired-width;
+}
+
+.slider{
+  @include aspect-ratio($your-images-width,$your-images-heigh);
+  border:3pt solid black;
+  
+  
+}
+
+.leftBtn{
+  margin-left:10px;
+  position:absolute;
+  z-index:4;
+  width:51px;
+  height:51px;
+  overflow:hidden;
+  top:40%;
+  bottom:0;
+  cursor:pointer;
+}
+
+.rightBtn{
+    cursor:pointer;
+  margin-right:10px;
+  position:absolute;
+  z-index:3;
+  overflow:hidden;
+  top:40%;  
+  bottom:0; 
+  height:51px;
+  width:51px;
+  right:0;
+}
+
+.rightBtn > img{
+  position:relative;
+  bottom:56px;
+  z-index:3;
+  
+}
+
+.pausebtn{
+  font-size: 35px;
+  color:white;
+  cursor: pointer;
+}
+
+.menuNav{
+	width:70%;
+	height:30px;
+	background-color:rgba(0,0,0,0.3);
+	position:absolute;
+	bottom:0;
+	margin:auto;
+	left:0;
+	right:0;
+	padding:10px;
+	float:left;
+	z-index:4;
+}
+
+$playPauseSize:30px;
+.playPause{
+	float:left;
+	height:$playPauseSize;
+	width:$playPauseSize;
+}
+
+.playPause > img {
+	width:100%;
+	height:100%;
+}
+
+.divider{
+	background:rgba(255,255,255,0.2);
+	width:2px;
+	height:100%;
+	float:left;
+	margin-left:20px;
+	margin-right:20px;
+}
+
+.vline{
+	border-left:2pt solid $bg;
+}
+
+.point{
+	width:$playPauseSize / 3;
+	height:$playPauseSize / 3;
+	background:white;
+	float:left;
+	border-radius:50px;
+	margin-top:0.7%;
+	border:3pt solid rgba(255,255,255,0.2);
+	-moz-background-clip: padding;     /* Firefox 3.6 */
+  	-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+  	background-clip: padding-box;
+  	margin-right:10px;
+}
+
+.point:hover{
+	width:$playPauseSize / 3;
+	height:$playPauseSize / 3;
+	background:$bg;
+	float:left;
+	border-radius:50px;
+	margin-top:0.7%;
+	border:3pt solid white;
+}
+
+.active{
+	background:$bg !important;
+	border-radius:50px;
+	border:3pt solid white !important;
+}
+
+#slider3{
+  z-index:2;
+}
+
+.currentSlide{
+  z-index:3;
+}
