@@ -1,8 +1,24 @@
-$desired-width: 100%; // you can have 600px or 100% of something.
+$desired-width: 70%; // you can have 600px or 100% of something.
 $your-images-width: 1440;
 $your-images-heigh: 600;
 
-$bg: #419873;
+$bg: #1E5F86;
+
+$white: #FDFDFD;
+$darkblue: #0A3A69;
+$blue: #075AA0;
+$lightgray: #D2D4D5;
+$lightblue: #6CA1CA;
+$grey: #9B9C9F;
+
+
+$orange: #E09154;
+$purple: #9879B2;
+$aqua: #0EB1B6;
+$lightgreen: #88C041;
+$red: #DF6153;
+$yellow: #EEB834;
+$brightblue: #17A6DE;
 
 body{
   background:$bg;
@@ -29,6 +45,8 @@ body{
 
 .container{
   width: $desired-width;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .slider{
@@ -149,6 +167,23 @@ $playPauseSize:30px;
   z-index:2;
 }
 
+.nav-wrapper{
+  background:white;
+  color:black !important;
+}
+
 .currentSlide{
   z-index:3;
+}
+
+.brand-logo{
+  height: 80%;
+  width:75px;
+
+}
+
+.brand-logo > img {
+  height: 100%;
+  width: 100%;
+  margin:10px;
 }

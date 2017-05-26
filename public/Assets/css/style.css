@@ -1,8 +1,10 @@
 body {
-  background: #419873; }
+  background: #1E5F86; }
 
 .container {
-  width: 100%; }
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto; }
 
 .slider {
   position: relative;
@@ -85,7 +87,7 @@ body {
   margin-right: 20px; }
 
 .vline {
-  border-left: 2pt solid #419873; }
+  border-left: 2pt solid #1E5F86; }
 
 .point {
   width: 10px;
@@ -105,19 +107,32 @@ body {
 .point:hover {
   width: 10px;
   height: 10px;
-  background: #419873;
+  background: #1E5F86;
   float: left;
   border-radius: 50px;
   margin-top: 0.7%;
   border: 3pt solid white; }
 
 .active {
-  background: #419873 !important;
+  background: #1E5F86 !important;
   border-radius: 50px;
   border: 3pt solid white !important; }
 
 #slider3 {
   z-index: 2; }
 
+.nav-wrapper {
+  background: white;
+  color: black !important; }
+
 .currentSlide {
   z-index: 3; }
+
+.brand-logo {
+  height: 80%;
+  width: 75px; }
+
+.brand-logo > img {
+  height: 100%;
+  width: 100%;
+  margin: 10px; }
