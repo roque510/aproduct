@@ -2,7 +2,7 @@
 
 $.fn.slider = function(){
 
-  let secondsOfMovement = 5;
+  let secondsOfMovement = 3;
   let tid = setInterval(timer, secondsOfMovement * 1000);
 	let movement = 0;
   let slides = this.children().length;

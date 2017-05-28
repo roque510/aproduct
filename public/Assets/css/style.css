@@ -1,8 +1,16 @@
+@font-face {
+  font-family: 'Fertigo_PRO';
+  src: url("Fertigo_PRO-webfont.woff2") format("woff2"), url("Fertigo_PRO-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 body {
-  background: #1E5F86; }
+  background: #D2D4D5 !important;
+  margin-top: 100px;
+  font-family: 'Fertigo_PRO' !important; }
 
 .container {
-  width: 70%;
+  width: 100%;
   margin-right: auto;
   margin-left: auto; }
 
@@ -72,7 +80,8 @@ body {
 .playPause {
   float: left;
   height: 30px;
-  width: 30px; }
+  width: 30px;
+  margin-top: -5px; }
 
 .playPause > img {
   width: 100%;
@@ -81,21 +90,21 @@ body {
 .divider {
   background: rgba(255, 255, 255, 0.2);
   width: 2px;
-  height: 100%;
+  height: 150%;
   float: left;
   margin-left: 20px;
   margin-right: 20px; }
 
 .vline {
-  border-left: 2pt solid #1E5F86; }
+  border-left: 2pt solid #D2D4D5; }
 
 .point {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   background: white;
   float: left;
   border-radius: 50px;
-  margin-top: 0.7%;
+  margin-top: 0%;
   border: 3pt solid rgba(255, 255, 255, 0.2);
   -moz-background-clip: padding;
   /* Firefox 3.6 */
@@ -105,16 +114,16 @@ body {
   margin-right: 10px; }
 
 .point:hover {
-  width: 10px;
-  height: 10px;
-  background: #1E5F86;
+  width: 15px;
+  height: 15px;
+  background: #D2D4D5;
   float: left;
   border-radius: 50px;
   margin-top: 0.7%;
   border: 3pt solid white; }
 
 .active {
-  background: #1E5F86 !important;
+  background: #D2D4D5 !important;
   border-radius: 50px;
   border: 3pt solid white !important; }
 
@@ -128,11 +137,23 @@ body {
 .currentSlide {
   z-index: 3; }
 
-.brand-logo {
-  height: 80%;
-  width: 75px; }
+.navbar-brand > img {
+  height: 165%; }
 
-.brand-logo > img {
-  height: 100%;
-  width: 100%;
-  margin: 10px; }
+.Main-Title {
+  position: relative;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.Main-Title > span {
+  color: #075AA0; }
+
+.wrapper {
+  margin-left: 50px !important;
+  margin-right: 50px !important; }
+
+.card {
+  background: #FDFDFD;
+  border-radius: 2px;
+  min-height: 50px; }

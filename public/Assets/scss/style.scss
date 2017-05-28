@@ -1,8 +1,8 @@
-$desired-width: 70%; // you can have 600px or 100% of something.
+$desired-width: 100%; // you can have 600px or 100% of something.
 $your-images-width: 1440;
 $your-images-heigh: 600;
 
-$bg: #1E5F86;
+
 
 $white: #FDFDFD;
 $darkblue: #0A3A69;
@@ -20,8 +20,22 @@ $red: #DF6153;
 $yellow: #EEB834;
 $brightblue: #17A6DE;
 
+$bg: $lightgray;
+
+@font-face {
+    font-family: 'Fertigo_PRO';
+    src: url('Fertigo_PRO-webfont.woff2') format('woff2'),
+         url('Fertigo_PRO-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body{
-  background:$bg;
+  background:$bg !important;
+  margin-top: 100px;
+
+  font-family: 'Fertigo_PRO' !important;
 }
 
 @mixin aspect-ratio($width, $height) {
@@ -113,6 +127,7 @@ $playPauseSize:30px;
 	float:left;
 	height:$playPauseSize;
 	width:$playPauseSize;
+  margin-top: -5px;
 }
 
 .playPause > img {
@@ -123,7 +138,7 @@ $playPauseSize:30px;
 .divider{
 	background:rgba(255,255,255,0.2);
 	width:2px;
-	height:100%;
+	height:150%;
 	float:left;
 	margin-left:20px;
 	margin-right:20px;
@@ -134,12 +149,12 @@ $playPauseSize:30px;
 }
 
 .point{
-	width:$playPauseSize / 3;
-	height:$playPauseSize / 3;
+	width:$playPauseSize / 2;
+	height:$playPauseSize / 2;
 	background:white;
 	float:left;
 	border-radius:50px;
-	margin-top:0.7%;
+	margin-top:0%;
 	border:3pt solid rgba(255,255,255,0.2);
 	-moz-background-clip: padding;     /* Firefox 3.6 */
   	-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
@@ -148,8 +163,8 @@ $playPauseSize:30px;
 }
 
 .point:hover{
-	width:$playPauseSize / 3;
-	height:$playPauseSize / 3;
+	width:$playPauseSize / 2;
+	height:$playPauseSize / 2;
 	background:$bg;
 	float:left;
 	border-radius:50px;
@@ -176,14 +191,29 @@ $playPauseSize:30px;
   z-index:3;
 }
 
-.brand-logo{
-  height: 80%;
-  width:75px;
-
+.navbar-brand > img {
+  height: 165%;
 }
 
-.brand-logo > img {
-  height: 100%;
-  width: 100%;
-  margin:10px;
+.Main-Title{
+  position:relative;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Main-Title > span {
+  color: $blue;
+}
+
+.wrapper {
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+}
+
+.card
+{
+  background: $white;
+  border-radius:2px;
+  min-height: 50px;
 }
