@@ -58,6 +58,7 @@ body{
 }
 
 .container{
+  padding-top: 10px !important;
   width: $desired-width;
   margin-right: auto;
   margin-left: auto;
@@ -196,10 +197,10 @@ $playPauseSize:30px;
 }
 
 .Main-Title{
-  position:relative;
-  width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 0px;
+  padding-top:10px;
+  height: 80px;
+  width: 80%;
 }
 
 .Main-Title > span {
@@ -217,3 +218,20 @@ $playPauseSize:30px;
   border-radius:2px;
   min-height: 50px;
 }
+
+.pushable{
+  background-color:$white;
+  height: 100% !important;
+}
+
+nav{
+  margin-bottom: 0px !important;
+}
+
+.col-centered{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
