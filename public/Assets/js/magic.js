@@ -156,13 +156,44 @@ $(".slider").slider();
   });
 }
 
+  function addProduct(productId, image1, image2, image3, image4, image5, producto, vendedor, descripcion, categoria, precio, lugar, fecha) {
+  firebase.database().ref('Products/' + productId).set({
+    imagen1: image1,
+    imagen2: image2,
+    imagen3: image3,
+    imagen4: image4,
+    imagen5: image5,
+    producto: producto,
+    vendedor: vendedor,
+    descripcion: descripcion,
+    categoria: categoria,
+    precio: precio,
+    lugar: lugar,
+    fecha: fecha
+    
+  });
+}
+
 
 
       });
 
 
-let add = document.querySelector("#newUser");
-add.onclick = () => console.log("WADDUP FAM!");
+/*let add = document.querySelector("#newUser");
+add.onclick = () => console.log("WADDUP FAM!");*/
+
+let add = document.querySelector("#agregar");
+add.OnSubmit= (e) => {
+    e.preventdefault();
+  console.log("WADDUP FAM!")};
+
+  $("#agregar").on("click",function(e){
+      e.preventDefault();
+      console.log(add);
+  });
+
+
+
 
 
 

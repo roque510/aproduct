@@ -71,6 +71,10 @@ body {
   z-index: 3;
 }
 
+.red {
+  background: red !important;
+}
+
 .pausebtn {
   font-size: 35px;
   color: white;
