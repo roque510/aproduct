@@ -183,17 +183,33 @@ $(".slider").slider();
 add.onclick = () => console.log("WADDUP FAM!");*/
 
 let add = document.querySelector("#agregar");
-add.OnSubmit= (e) => {
-    e.preventdefault();
-  console.log("WADDUP FAM!")};
 
-  $("#agregar").on("click",function(e){
-      e.preventDefault();
-      console.log(add);
-  });
+let image1 = document.querySelector("#imagen1");
+let image2 = document.querySelector("#imagen2");
+let image3 = document.querySelector("#imagen3");
+let image4 = document.querySelector("#imagen4");
+let image5 = document.querySelector("#imagen5");
+
+let producto = document.querySelector("#producto");
+let vendedor = document.querySelector("#vendedor");
+let categoria = document.querySelector("#categoria");
+let precio = document.querySelector("#precio");
+let lugar = document.querySelector("#lugar");
+let fecha = document.querySelector("#fecha");
+let descripcion = document.querySelector("#descripcion");
+
+add.onclick= (e) => {
+    e.preventDefault();
+    //addProduct(Date.now(),);
+    console.log(image1.value,image2.value,image3.value,image4.value,image5.value,producto.value,categoria.value,vendedor.value,precio.value,lugar.value,fecha.value,descripcion.value);
 
 
+};
 
+  // $("#agregar").on("click",function(e){
+  //     e.preventDefault();
+  //     console.log(add);
+  // });
 
 
 
