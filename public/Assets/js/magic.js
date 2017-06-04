@@ -117,34 +117,32 @@ $.fn.slider = function(){
 
 $(".slider").slider();
 
-
-  
-    
-
-//////////////// FIREBASE //////////////////
+///////////////////////////////
 
 
+/*let add = document.querySelector("#agregar");
 
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('data', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+let image1 = document.querySelector("#imagen1");
+let image2 = document.querySelector("#imagen2");
+let image3 = document.querySelector("#imagen3");
+let image4 = document.querySelector("#imagen4");
+let image5 = document.querySelector("#imagen5");
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
+let producto = document.querySelector("#producto");
+let vendedor = document.querySelector("#Vendedor");
+let categoria = document.querySelector("#categoria");
+let precio = document.querySelector("#precio");
+let lugar = document.querySelector("#lugar");
+let fecha = document.querySelector("#fecha");
+let descripcion = document.querySelector("#descripcion");
 
+add.onclick= (e) => {
+    e.preventDefault();
+    //addProduct(Date.now(),);
+    console.log(image1.value,image2.value,image3.value,image4.value,image5.value,producto.value,categoria.value,vendedor.value,precio.value,lugar.value,fecha.value,descripcion.value);
+
+
+};*/
 
 
 
@@ -175,41 +173,22 @@ $(".slider").slider();
 }
 
 
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDUqBf5VzAFTQpAUIaqYsNuoJwg78FQYWU",
+    authDomain: "aproduct-25ff3.firebaseapp.com",
+    databaseURL: "https://aproduct-25ff3.firebaseio.com",
+    projectId: "aproduct-25ff3",
+    storageBucket: "aproduct-25ff3.appspot.com",
+    messagingSenderId: "233616086586"
+  };
+  firebase.initializeApp(config);
 
-      });
+  const preObject = document.querySelector("#load");
 
+  const dbRefObject = firebase.database().ref().child('users').child('aroque');
 
-/*let add = document.querySelector("#newUser");
-add.onclick = () => console.log("WADDUP FAM!");*/
+  dbRefObject.on('value', (snap) => {
 
-let add = document.querySelector("#agregar");
-
-let image1 = document.querySelector("#imagen1");
-let image2 = document.querySelector("#imagen2");
-let image3 = document.querySelector("#imagen3");
-let image4 = document.querySelector("#imagen4");
-let image5 = document.querySelector("#imagen5");
-
-let producto = document.querySelector("#producto");
-let vendedor = document.querySelector("#vendedor");
-let categoria = document.querySelector("#categoria");
-let precio = document.querySelector("#precio");
-let lugar = document.querySelector("#lugar");
-let fecha = document.querySelector("#fecha");
-let descripcion = document.querySelector("#descripcion");
-
-add.onclick= (e) => {
-    e.preventDefault();
-    //addProduct(Date.now(),);
-    console.log(image1.value,image2.value,image3.value,image4.value,image5.value,producto.value,categoria.value,vendedor.value,precio.value,lugar.value,fecha.value,descripcion.value);
-
-
-};
-
-  // $("#agregar").on("click",function(e){
-  //     e.preventDefault();
-  //     console.log(add);
-  // });
-
-
-
+  	preObject.innerText = JSON.stringify(snap.val(),null,3);
+  });
