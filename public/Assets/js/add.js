@@ -23,11 +23,36 @@ let precio = document.querySelector("#precio");
 let lugar = document.querySelector("#lugar");
 let fecha = document.querySelector("#fecha");
 let descripcion = document.querySelector("#descripcion");
+const form = document.querySelector("form");
+
+const inputs = document.querySelectorAll("input");
+
+
 
 add.onclick= (e) => {
+  let flag = true;
     e.preventDefault();
     //addProduct(Date.now(),);
-    addProduct(Date.now(),image1.value,image2.value,image3.value,image4.value,image5.value,producto.value,categoria.value,vendedor.value,precio.value,lugar.value,fecha.value,descripcion.value);
+    for(element of inputs){
+      if(element.value == "")
+        flag = false;
+
+    }
+
+    if(flag){
+      console.log("well done");
+    //addProduct(Date.now(),image1.value,image2.value,image3.value,image4.value,image5.value,producto.value,categoria.value,vendedor.value,precio.value,lugar.value,fecha.value,descripcion.value);
+    form.reset();
+    }
+    else{
+          for(element of inputs){
+            console.log(element.value);
+            if(element.value == "")
+              console.log("este!");
+            
+          }
+      console.log("you must fill all fileds in form!");
+    }
 
 
 };
