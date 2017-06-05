@@ -186,9 +186,12 @@ add.onclick= (e) => {
 
   const preObject = document.querySelector("#load");
 
-  const dbRefObject = firebase.database().ref().child('users').child('aroque');
+  const dbRefObject = firebase.database().ref().child('Products');
 
-  dbRefObject.on('value', (snap) => {
+  dbRefObject
+    .startAt('1496614303589')
+    .endAt('1496614303589')
+    .once('value', (snap) => {
 
   	preObject.innerText = JSON.stringify(snap.val(),null,3);
   });

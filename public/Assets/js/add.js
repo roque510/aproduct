@@ -25,7 +25,14 @@ let fecha = document.querySelector("#fecha");
 let descripcion = document.querySelector("#descripcion");
 const form = document.querySelector("form");
 
-const inputs = document.querySelectorAll("input");
+//const inputs = document.querySelectorAll("input");
+//console.log(inputs);
+
+var inputs = Array.prototype.slice.call(document.querySelectorAll('input'));
+var txtarea = Array.prototype.slice.call(document.querySelectorAll('textarea'));
+
+inputs.push.apply(inputs, txtarea);
+console.log(inputs); // array with all divs and spans on page
 
 
 
