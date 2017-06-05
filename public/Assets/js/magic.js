@@ -172,6 +172,16 @@ add.onclick= (e) => {
   });
 }
 
+//
+
+const btnQ = document.getElementById('submitQuery');
+const queryBar = document.getElementById('queryBar');
+
+btnQ.onclick = () => {
+    getByCategory(queryBar.value);
+    console.log(queryBar.value);
+};
+
 
   // Initialize Firebase
   var config = {
@@ -188,10 +198,19 @@ add.onclick= (e) => {
 
   const dbRefObject = firebase.database().ref().child('Products');
 
-  dbRefObject
-    .startAt('1496614303589')
-    .endAt('1496614303589')
-    .once('value', (snap) => {
+  let query = dbRefObject.orderByChild('categoria');
 
-  	preObject.innerText = JSON.stringify(snap.val(),null,3);
-  });
+
+
+  function getByCategory(value){
+    
+    query = dbRefObject.orderByChild('categoria').equalTo(value).once("value",snap => {
+          preObject.innerText = JSON.stringify(snap.val(),null,3)
+    });
+  }
+
+  
+    
+    query.on('value', (snap) => {
+      preObject.innerText = JSON.stringify(snap.val(),null,3);
+    });

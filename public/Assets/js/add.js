@@ -48,8 +48,8 @@ add.onclick= (e) => {
 
     if(flag){
       console.log("well done");
-    //addProduct(Date.now(),image1.value,image2.value,image3.value,image4.value,image5.value,producto.value,categoria.value,vendedor.value,precio.value,lugar.value,fecha.value,descripcion.value);
-    form.reset();
+      addProduct(Date.now(),image1.value,image2.value,image3.value,image4.value,image5.value,producto.value,categoria.value,vendedor.value,precio.value,lugar.value,fecha.value,descripcion.value);
+      form.reset();
     }
     else{
           for(element of inputs){
@@ -74,8 +74,9 @@ add.onclick= (e) => {
   });
 }
 
-  function addProduct(productId, image1, image2, image3, image4, image5, producto, vendedor, descripcion, categoria, precio, lugar, fecha) {
-  firebase.database().ref('Products/' + productId).set({
+  function addProduct(productId, image1, image2, image3, image4, image5, producto, categoria, vendedor,precio,lugar, fecha, descripcion) {
+  firebase.database().ref('Products').push({
+    pid:productId,
     imagen1: image1,
     imagen2: image2,
     imagen3: image3,
